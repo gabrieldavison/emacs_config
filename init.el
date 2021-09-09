@@ -8,13 +8,6 @@
 ;; Package installation and configuarion (with use-package)
 (require 'use-package)
 
-;; Sets up emacs dashboard
-;;(require 'dashboard)
-;;(dashboard-setup-startup-hook)
-;;(setq dashboard-items '((recents  . 10)
-;;                        (projects . 10)
-;;                        ))
-
 ;; evil-commentary
 (use-package evil-commentary
   :ensure t
@@ -24,19 +17,20 @@
   :ensure t
   :config
   (dashboard-setup-startup-hook)
-  (setq dashboard-items '((recents  . 10)
-                          (projects . 10)
-                          )))
+  (setq dashboard-items '((recents  . 20)))
+  (setq dashboard-set-footer nil)
+  (setq dashboard-startup-banner nil))
+
 ;; Enables prettier globally
-;; (global-prettier-mode)
+;; Might need to add this to get it to work on linux
 ;; (setenv "NODE_PATH" "/home/gabriel/.nvm/versions/node/v14.10.1/lib")
 (use-package prettier
   :ensure t
   :config (global-prettier-mode))
+
 ;; Enables emmet mode
-;; (add-hook 'html-mode-hook 'emmet-mode)
-;; (add-hook 'css-mode-hook  'emmet-mode)
 (use-package emmet-mode
   :ensure t
-  :config (add-hook 'html-mode-hook 'emmet-mode) (add-hook 'css-mode-hook  'emmet-mode)
-  )
+  :config
+  (add-hook 'html-mode-hook 'emmet-mode)
+  (add-hook 'css-mode-hook  'emmet-mode))
