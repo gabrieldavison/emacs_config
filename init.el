@@ -5,8 +5,12 @@
 ;; Disable keychord mode (recommended when using evil-mode)
 (setq key-chord-mode -1)
 
-;; Disable smartparens strict
-(setq smartparens-strict-mode nil)
+;; Allows use of arrow keys in evil-insert-mode
+(define-key evil-insert-state-map (kbd "<up>") nil)
+(define-key evil-insert-state-map (kbd "<down>") nil)
+
+(define-key evil-insert-state-map (kbd "<up>") 'evil-previous-line)
+(define-key evil-insert-state-map (kbd "<down>") 'evil-next-line)
 
 ;; Package installation and configuarion (with use-package)
 (require 'use-package)
