@@ -5,6 +5,9 @@
 ;; Disable keychord mode (recommended when using evil-mode)
 (setq key-chord-mode -1)
 
+;; Disable smartparens strict
+(setq smartparens-strict-mode nil)
+
 ;; Package installation and configuarion (with use-package)
 (require 'use-package)
 
