@@ -12,6 +12,16 @@
 (define-key evil-insert-state-map (kbd "<up>") 'evil-previous-line)
 (define-key evil-insert-state-map (kbd "<down>") 'evil-next-line)
 
+;; Gets rid of wrod-wrap highlighting in whitespace mode
+(setq whitespace-style (delete 'lines-tail whitespace-style))
+
+;; Enables line wrapping in org mode
+(add-hook 'org-mode-hook #'(lambda ()
+                             ;; make the lines in the buffer wrap around the edges of the screen.
+                             ;; to press C-c q  or fill-paragraph ever again!
+                             (visual-line-mode)
+                             (org-indent-mode)))
+
 ;; Package installation and configuarion (with use-package)
 (require 'use-package)
 

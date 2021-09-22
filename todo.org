@@ -1,0 +1,4 @@
+* TODO Change default shell to eshell (prefer this shell)
+* TODO Make it so the evil mode arrow keybindings work properly in eshell
+At the moment I cant use up / down arrows to go through shell history
+Potentially I could work out the problems with ansi-term instead
